@@ -61,7 +61,6 @@ public class b1 {
         else if (aveRound >= 5) System.out.println("D -> Not bad student");
         else System.out.println("Student Grade: F -> Fail student");
 
-
 //        switch (aveInt) {
 //            case 10:
 //            case 9:
