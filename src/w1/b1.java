@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class b1 {
 
     static void Grade(double score, String subject){
-        if (score >= 9) System.out.println("Grade: S");
-        else if (score >= 8) System.out.println("Grade: A");
-        else if (score >= 7) System.out.println("Grade: B");
-        else if (score >= 6) System.out.println("Grade: C");
-        else if (score >= 5) System.out.println("Grade: D");
+        if (score >= 9) System.out.println(subject + " Grade: S");
+        else if (score >= 8) System.out.println(subject + " Grade: A");
+        else if (score >= 7) System.out.println(subject + " Grade: B");
+        else if (score >= 6) System.out.println(subject + " Grade: C");
+        else if (score >= 5) System.out.println(subject + " Grade: D");
         else System.out.println("Grade: F");
     }
 
