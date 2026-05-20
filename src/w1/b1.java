@@ -3,52 +3,45 @@ package w1;
 import java.util.Scanner;
 
 public class b1 {
+
+    static void Grade(double score, String subject){
+        if (score >= 9) System.out.println("Grade: S");
+        else if (score >= 8) System.out.println("Grade: A");
+        else if (score >= 7) System.out.println("Grade: B");
+        else if (score >= 6) System.out.println("Grade: C");
+        else if (score >= 5) System.out.println("Grade: D");
+        else System.out.println("Grade: F");
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); // Create a Scanner object
 
         System.out.println("Enter Average point of Mathematics:");
         double math = input.nextDouble();
-
         System.out.println("Enter Average point of English:");
         double english = input.nextDouble();
-
         System.out.println("Enter Average point of Literature:");
         double literature = input.nextDouble();
 
-        if (math >= 9) System.out.println("Grade of Mathematics: S");
-        else if (math >= 8) System.out.println("Grade of Mathematics: A");
-        else if (math >= 7) System.out.println("Grade of Mathematics: B");
-        else if (math >= 6) System.out.println("Grade of Mathematics: C");
-        else if (math >= 5) System.out.println("Grade of Mathematics: D");
-        else System.out.println("Grade of Mathematics: F");
+        input.close();
 
-        if (english >= 9) System.out.println("Grade of English: S");
-        else if (english >= 8) System.out.println("Grade of English: A");
-        else if (english >= 7) System.out.println("Grade of English: B");
-        else if (english >= 6) System.out.println("Grade of English: C");
-        else if (english >= 5) System.out.println("Grade of English: D");
-        else System.out.println("Grade of English: F");
-
-        if (literature >= 9) System.out.println("Grade of Literature: S");
-        else if (literature >= 8) System.out.println("Grade of Literature: A");
-        else if (literature >= 7) System.out.println("Grade of Literature: B");
-        else if (literature >= 6) System.out.println("Grade of Literature: C");
-        else if (literature >= 5) System.out.println("Grade of Literature: D");
-        else System.out.println("Grade of Literature: F");
+        Grade(math, "Math");
+        Grade(english, "English");
+        Grade(literature, "Literature");
 
         double average = (math + english + literature) / 3;
         double aveRound = Math.round(average * 100.0) / 100.0;
+        System.out.println("Average: " + aveRound);
         // Math.round: làm tròn về số nguyên gần nhất
         // if 100 => int / int -> int ==> 100.0
-        System.out.println("Average: " + aveRound);
 
 //        int aveInt = (int) aveRound;
 //        int lowest = (int) Math.min(math, Math.min(literature, english));
-
-        double lowest = Math.min(math, Math.min(literature, english));
         // LOGIC
 //        if (lowest < 5) aveInt = lowest;
 //        else if (aveInt > lowest) aveInt = lowest + 1;
+
+        double lowest = Math.min(math, Math.min(literature, english));
 
         if (lowest < 5) aveRound = lowest;
         else if (aveRound > lowest) aveRound = lowest + 1;
